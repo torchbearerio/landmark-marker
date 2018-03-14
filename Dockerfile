@@ -31,7 +31,7 @@ RUN conda env create -f environment.yml
 ENV PATH /opt/conda/envs/torchbearer-services/bin:$PATH
 RUN pip install git+https://github.com/torchbearerio/python-core.git --upgrade
 
-ADD saliencyservice app
+ADD pipelinefinisher app
 
 EXPOSE 8080
 ENV PORT 8080
