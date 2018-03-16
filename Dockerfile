@@ -26,12 +26,12 @@ RUN apt-get install -y libmysqlclient-dev
 
 RUN apt-get install -y build-essential
 
-ADD environment.yml environment.yml
+COPY environment.yml environment.yml
 RUN conda env create -f environment.yml
 ENV PATH /opt/conda/envs/torchbearer-services/bin:$PATH
 RUN pip install git+https://github.com/torchbearerio/python-core.git --upgrade
 
-ADD pipelinefinisher app
+COPY pipelinefinisher app
 
 EXPOSE 8080
 ENV PORT 8080

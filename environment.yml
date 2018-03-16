@@ -125,6 +125,7 @@ dependencies:
   - ipython-genutils==0.2.0
   - jmespath==0.9.2
   - sqlalchemy==1.1.18
+  - MySQL-python
   - olefile==0.44
   - pillow==4.1.0
   - prompt-toolkit==1.0.14
