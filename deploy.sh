@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build zip
-zip build environment.yml pipelinefinisher/* Dockerfile
+zip build -r environment.yml pipelinefinisher Dockerfile .ebextensions
 
 # Deploy to EB
 eb deploy
