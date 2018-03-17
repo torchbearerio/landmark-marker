@@ -55,6 +55,9 @@ class PipelineFinisher (Task.Task):
             session.rollback()
             self.send_failure('OBLIVIATOR ERROR', "Unable to delete pipeline assets from S3")
 
+        finally:
+            session.close()
+
     @staticmethod
     def _delete_s3_objects(bucket, keys):
         client = AWSClient.get_client('s3')
