@@ -9,6 +9,8 @@ def handle_task(task_input, task_token):
     pf.run()
 
 if __name__ == '__main__':
+    # PipelineFinisher(356, 804, "fsdf").run()
+
     thisTask = Constants.TASK_ARNS['PIPELINE_FINISH']
 
     WorkerService.start((thisTask, handle_task))

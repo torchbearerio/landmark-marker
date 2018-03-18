@@ -53,7 +53,7 @@ class PipelineFinisher (Task.Task):
         except Exception, e:
             traceback.print_exc()
             session.rollback()
-            self.send_failure('OBLIVIATOR ERROR', "Unable to delete pipeline assets from S3")
+            self.send_failure('PIPELINE FINISHER ERROR', e.message)
 
         finally:
             session.close()
