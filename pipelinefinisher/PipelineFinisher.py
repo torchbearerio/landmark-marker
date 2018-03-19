@@ -22,6 +22,8 @@ class PipelineFinisher (Task.Task):
         try:
             hit = session.query(Hit).filter_by(hit_id=self.hit_id).one()
 
+            hit.set_start_time_for_task("pipeline_finish")
+
             # Mark this hit as "complete"
             hit.status = Constants.HIT_STATUS["HIT_STATUS_COMPLETE"]
 
@@ -44,6 +46,8 @@ class PipelineFinisher (Task.Task):
             self._delete_s3_objects(Constants.S3_BUCKETS["CROPPED_IMAGES"], landmark_keys)
             self._delete_s3_objects(Constants.S3_BUCKETS["TRANSPARENT_CROPPED_IMAGES"], landmark_keys)
             self._delete_s3_objects(Constants.S3_BUCKETS["MARKED_LANDMARK_IMAGES"], landmark_keys)
+
+            hit.set_end_time_for_task("pipeline_finish")
 
             session.commit()
             self.send_success()
