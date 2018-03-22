@@ -34,9 +34,9 @@ class PipelineFinisher (Task.Task):
             landmarks = hit.candidate_landmarks
 
             # Remove streetview image and saliency map for this ExecutionPoint
-            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_at.jpg".format(self.ep_id)])
-            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_before.jpg".format(self.ep_id)])
-            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_just_before.jpg".format(self.ep_id)])
+            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_at.jpg".format(self.hit_id)])
+            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_before.jpg".format(self.hit_id)])
+            self._delete_s3_objects(Constants.S3_BUCKETS["STREETVIEW_IMAGES"], ["{0}_just_before.jpg".format(self.hit_id)])
             self._delete_s3_objects(Constants.S3_BUCKETS["SALIENCY_MAPS"], ["{0}_at.json".format(self.hit_id)])
             self._delete_s3_objects(Constants.S3_BUCKETS["SALIENCY_MAPS"], ["{0}_before.json".format(self.hit_id)])
             self._delete_s3_objects(Constants.S3_BUCKETS["SALIENCY_MAPS"], ["{0}_just_before.json".format(self.hit_id)])
