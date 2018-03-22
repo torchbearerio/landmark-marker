@@ -13,4 +13,4 @@ if __name__ == '__main__':
 
     thisTask = Constants.TASK_ARNS['PIPELINE_FINISH']
 
-    WorkerService.start((thisTask, handle_task))
+    WorkerService.start((thisTask, handle_task, 5))
