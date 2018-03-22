@@ -29,6 +29,8 @@ RUN apt-get install -y build-essential
 COPY environment.yml environment.yml
 RUN conda env create -f environment.yml
 ENV PATH /opt/conda/envs/torchbearer-services/bin:$PATH
+
+ADD https://api.github.com/repos/torchbearerio/python-core/git/refs/heads/master version.json
 RUN pip install git+https://github.com/torchbearerio/python-core.git --upgrade
 
 COPY pipelinefinisher app

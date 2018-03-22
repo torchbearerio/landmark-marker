@@ -9,7 +9,7 @@ def handle_task(task_input, task_token):
     pf.run()
 
 if __name__ == '__main__':
-    # PipelineFinisher(358, 812, "fsdf").run()
+    # PipelineFinisher(355, 809, "fsdf").run()
 
     thisTask = Constants.TASK_ARNS['PIPELINE_FINISH']
 
